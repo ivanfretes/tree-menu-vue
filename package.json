@@ -3,14 +3,24 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "main": "./dist/tree-menu.umd.cjs",
+  "module": "./dist/tree-menu.js",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview"
   },
+  "exports": {
+    ".": {
+      "import": "./dist/tree-menu.js",
+      "require": "./dist/tree-menu.umd.cjs"
+    },
+    "./style.css": "./dist/style.css"
+  },
   "dependencies": {
     "path": "^0.12.7",
-    "vue": "^3.3.4"
+    "vue": "^3.3.4",
+    "tree-menu-vue": "file:./dist"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
